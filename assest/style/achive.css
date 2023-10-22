@@ -1,0 +1,395 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    max-width: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none!important;
+}
+
+
+/*--------Media-----------*/
+
+
+@media (min-width: 768px) {
+    .navbar-collapse.collapse {
+        display: block !important;
+        height: auto !important;
+        padding-bottom: 0;
+        overflow: visible !important;
+    }
+}
+
+@media (max-width: 1024px) /*and (min-width: 767px)*/ {
+    .header ul {
+        display: flex;
+        flex-direction: column !important;
+        text-align: center;
+    }
+
+    .header.sticky {
+        height: 105px !important;
+    }
+
+    .promo-text h4 {
+        font-size: 24px !important;
+    }
+
+
+    .footer{
+        height: 50vh !important;
+    }
+
+    .footer-ul li{
+        padding-left: 0 !important;
+    }
+
+    .footer_content{
+        display: flex;
+        flex-direction: column !important;
+        width: auto !important;
+        padding-top: 250px !important;
+    }
+
+    .footer_content a{
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+    }
+
+    .footer-ul ul{
+        display: flex;
+        flex-direction: column !important;
+        text-align: center;
+    }
+
+    .footer-ul li{
+        padding-top: 10px;
+    }
+
+
+}
+
+
+/* Для планшетов и меньших экранов */
+@media (max-width: 768px) and (min-width: 479px) {
+    /* Ваши адаптивные стили для планшетов и меньших экранов */
+    .promo-text h4 {
+        font-size: 18px !important;
+    }
+
+    .music_list{
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+@media (max-width: 480px) {
+    header{
+        height: 100vh !important;
+    }
+
+    .promo{
+        margin-top: 100px;
+        align-items: normal !important;
+    }
+
+    .promo-text h1{
+        font-size: 24px !important;
+    }
+
+    .promo-text h4 {
+        font-size: 16px !important;
+    }
+
+    .music_ul{
+        display: flex;
+
+    }
+
+    .music_list{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+
+/*----------Fonts-----------*/
+
+@font-face {
+    font-family: 'Gordita';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Gordita'), local('Gordita'),
+    url(../fonts/Gordita-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Gordita';
+    font-style: bold;
+    font-weight: bold;
+    src: local('Gordita'), local('Gordita'),
+    url(../fonts/Gordita-Black.ttf);
+}
+
+@font-face {
+    font-family: 'Gordita';
+    font-style: lighter;
+    font-weight: lighter;
+    src: local('Gordita'), local('Gordita'),
+    url(../fonts/Gordita-Light.ttf);
+}
+
+
+h1 {
+    font-family: Gordita;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #e7faec;
+    line-height: 90%;
+}
+
+
+h4 {
+    font-family: Gordita;
+    font-weight: lighter;
+    color: #C3EED7;
+    text-transform: uppercase;
+
+}
+
+/*----------Header----------*/
+
+header {
+    background: url("../img/fon2.png");
+    padding-bottom: 100px;
+    background-size: cover; /* или background-size: contain; в зависимости от предпочтений */
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 88vh;
+
+}
+
+
+.header {
+    width: 100%;
+    height: 60px;
+}
+
+.header-color li a {
+    text-decoration: none;
+    color: #7C7EEAFF;
+}
+
+.header ul {
+    color: #7C7EEAFF;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    margin-bottom: 0rem;
+
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    text-transform: uppercase;
+
+    font-family: "Gordita";
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.header li {
+    position: relative;
+    text-decoration: none;
+}
+
+
+.header li::before, li::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    width: 0%;
+    height: 2px;
+    background-color: #7c7eea;
+    transition: all 0.3s ease-in-out;
+}
+
+.header li::before {
+    transform: translateX(-50%);
+}
+
+.header li::after {
+    transform: translateX(50%);
+}
+
+.header li:hover::before {
+    width: 50%;
+}
+
+.header li:hover::after {
+    width: 50%;
+}
+
+
+.container {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+}
+
+
+.header-color {
+    background-color: #ffffff;
+    padding: 20px 0 20px;
+    border-radius: 5px;
+}
+
+.header.sticky {
+    position: fixed;
+    padding-top: 15px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #fff;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.header.sticky.visible {
+    opacity: 1;
+}
+
+.container.sticky {
+    width: 100%;
+    padding: 0;
+}
+
+.header-color.sticky {
+    padding: 0;
+    background-color: transparent;
+    border-radius: 0;
+}
+
+
+/*--------Promo---------*/
+.promo {
+    align-items: center;
+    /*justify-content: center;*/
+    display: flex;
+
+    height: 80vh;
+    color: white;
+    text-align: left;
+    font-size: 50px;
+
+
+    /*animation: slideIn 1.0s ease-out forwards;*/
+
+}
+
+
+.promo h4 {
+    font-size: 26px;
+    line-height: 250%;
+
+}
+
+.music_ul{
+    display: flex;
+    flex-direction: column;
+}
+
+.music_list{
+    display: flex;
+    margin-top: 10px;
+}
+
+
+/*-------Таблица-------*/
+.table {
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+/*-----------Footer-------*/
+.footer {
+    width: 100%;
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+    background: url("../img/fon_footer.png");
+    background-size: cover; /* или background-size: contain; в зависимости от предпочтений */
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.footer_content {
+
+    display: flex;
+    width: 60%;
+    height: 200px;
+    padding-top: 120px;
+    justify-content: space-around;
+}
+
+.footer-ul {
+    width: 80%;
+    display: flex;
+
+}
+
+.footer-ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-ul ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    text-transform: uppercase;
+    color: #fff;
+    font-family: "Gordita";
+    font-weight: bold;
+    font-size: 18px;
+
+}
+
+.footer-ul li {
+    padding-left: 30px;
+}
+
+.vk {
+    background: url("../img/vk_achive.png");
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: -10px;
+}
+
+
+/*--------------Files-------------*/
+.accordion-body li {
+    font-family: "Gordita";
+    font-weight: bold;
+
+}
+
+

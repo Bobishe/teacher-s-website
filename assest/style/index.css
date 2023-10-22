@@ -1,0 +1,483 @@
+@import "header.css";
+@import "media.css";
+/*@import "../lib/css/bootstrap.min.css";*/
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 1.5;
+    color: #777777;
+    background: #fff;
+    height: 100%;
+}
+
+
+
+
+
+
+
+
+
+/*---------Email-massage--------*/
+.popup {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #7c7eea;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: sans-serif;
+    font-size: 14px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.hidden {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/*---------Container2-----------*/
+
+.container2 {
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+}
+
+.card1 {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: -30vh;
+}
+
+
+.card_content {
+    width: 25%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    padding: 3% 1%;
+    opacity: 0;
+    transition: color 0.5s ease;
+    /*animation: cardIn 1.0s ease-out forwards;*/
+    /* animation-delay: 1s;*/
+    transform: translateY(0);
+}
+
+
+
+.card_content:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.card_content:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+.card_content:nth-child(3) {
+    animation-delay: 0.9s;
+}
+
+
+.card_content h4 {
+    color: black;
+    margin: 0;
+    z-index: 1;
+    /* Указываем плавный переход для свойства color */
+    transition: color 0.5s ease;
+    font-family: Gordita;
+    font-weight: bold !important;
+}
+
+
+.card_content p {
+    color: black;
+    margin: 0;
+    z-index: 1;
+    font-size: 18px;
+    /* Указываем плавный переход для свойства color */
+    transition: color 0.5s ease;
+    font-family: Gordita;
+    font-weight: lighter;
+}
+
+.card_content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, #6086d4, #4848f8);
+    /* Устанавливаем начальное значение прозрачности */
+    opacity: 0;
+    /* Указываем плавный переход для свойства opacity */
+    transition: opacity 0.5s ease;
+    z-index: 0;
+
+}
+
+.card_content:hover::before {
+   opacity: 1;
+
+}
+
+.card_content:hover p {
+    color: white;
+}
+
+.card_content:hover h4 {
+    color: white;
+}
+
+.card_content:hover .custom-button {
+    background-color: transparent;
+    border: 2px solid white;
+}
+
+
+.custom-button {
+    background-color: #007bff;
+    position: relative;
+    top: 4vh;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+    z-index: 1;
+    border: 2px solid #007bff;
+    transition: background-color 0.5s ease, border 0.5s ease;
+    font-family: "Gordita";
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.custom-button:hover {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+/*-------------obaut------------*/
+
+.container2_about {
+    margin-top: -17vh;
+
+}
+
+.stripe_main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.stripe {
+    width: 100px;
+    margin-top: 30px;
+    height: 2px; /* Вы можете изменить высоту полоски */
+    background-color: #007bff; /* Фиолетовый цвет */
+}
+
+
+
+
+
+.container2 h1 {
+    color: black;
+    text-align: center;
+    font-size: 34px;
+}
+
+.container2_about p {
+    text-align: center;
+    padding-top: 50px;
+    font-family: Gordita;
+    font-weight: lighter;
+    color: black;
+}
+
+.container2_video {
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+
+
+.video-button {
+    margin-top: 50px;
+    width: 100px;
+    height: 100px;
+    background-color: #7c7eea;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+    transition: transform 0.3s;
+}
+
+
+.video-button:hover {
+    transform: scale(1.2);
+}
+
+.video-button::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+    border-radius: 50%;
+    background-color: transparent;
+    transition: background-color 0.3s;
+}
+
+.video-button:hover::before {
+    background-color: rgba(108, 92, 231, 0.3);
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 30px solid white;
+    position: absolute;
+    top: 50%;
+    left: 53%;
+    transform: translate(-50%, -50%) rotate(90deg);
+
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s;
+}
+
+.overlay iframe {
+    width: 80%;
+    height: 80%;
+    max-width: 960px;
+    max-height: 540px;
+}
+
+
+
+/*--------container3----------*/
+.container3 {
+    margin-top: 200px;
+    padding-top: 200px;
+    height: 980px;
+    background: url("../img/fon_container3.png");
+    background-size: cover; /* или background-size: contain; в зависимости от предпочтений */
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container3 h1{
+    text-align: center;
+
+}
+
+.container3_content {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 150px;
+}
+
+
+
+
+
+
+
+/*--------Contacts-------*/
+.contacts {
+    display: flex;
+    flex-direction: column;
+}
+
+.contacts h2 {
+    color: white;
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    font-weight: 400;
+    font-size: 26px;
+}
+
+.contacts ul{
+    list-style-type: none;
+    color: white;
+    margin-top: 50px;
+    font-family: Gordita;
+    font-weight: lighter;
+}
+
+.contacts i{
+
+    color: white;
+    font-size: 28px;
+}
+
+.contacts a{
+    color: white;
+
+}
+
+.fas.fa-home {
+    color: #f00; /* Замените на нужный цвет */
+}
+
+/*--------Forms--------*/
+
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+
+    color: white;
+}
+
+.contact-form input,
+.contact-form textarea {
+    background-color: transparent;
+
+    border: 3px solid #ffffff;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+
+    font-family: Gordita;
+    font-weight: lighter;
+
+    transition: background-color 0.3s ease;
+    color: #2528bb; /* Здесь добавлено свойство для изменения цвета текста */
+}
+
+.contact-form textarea {
+    resize: none;
+    height: 120px;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #ffffff; /* Здесь добавлено свойство для изменения цвета плейсхолдера */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    background-color: #fff;
+    outline: none;
+}
+
+.contact-form button {
+    background-color: transparent;
+    border: 3px solid white;
+    width: 50%;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: Gordita;
+    transition: background-color 0.5s ease, border 0.5s ease, color 0.5s ease;
+
+    font-weight: bold;
+}
+
+.contact-form button:hover {
+    background-color: #ffffff;
+    color: #001b77;
+}
+
+/*-------Footer-------*/
+
+.footer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.footer_content{
+    display: flex;
+    width: 60%;
+    height: 200px;
+    padding-top: 70px;
+    justify-content: space-around;
+}
+
+.footer-ul{
+    width: 80%;
+    display: flex;
+
+}
+
+.footer-ul ul{
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    text-transform: uppercase;
+    color: #7c7eea;
+    font-family: "Gordita";
+    font-weight: bold;
+    font-size: 18px;
+
+}
+
+.footer-ul li{
+    padding-left: 30px;
+}
+
+.vk {
+    background: url("../img/vk.png");
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: -10px;
+}
